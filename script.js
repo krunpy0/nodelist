@@ -101,6 +101,18 @@ class NodeList {
     }
     console.log(null)
   }
+  toString() {
+    let current = this.head;
+    let log = ``;
+    while (current !== null) {
+      if (current.next !== null) {
+        log += ` ${current.value} ->`
+      }
+      else { log += ` ${current.value}` }
+      current = current.next;
+    }
+    console.log(log)
+  }
 }
 
 let list = new NodeList();
@@ -120,4 +132,5 @@ list.size()
 list.at(0)
 list.contains(40)
 list.find(10)
+list.toString()
 
